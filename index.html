@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPS Convent School - Quality Education from Nursery to Class 10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #dc2626;
+            --accent-color: #f59e0b;
+            --dark-blue: #1e40af;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ==================== HEADER & NAVIGATION ==================== */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .logo-section:hover .logo-icon {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .school-name {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .school-name h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .school-name p {
+            font-size: 12px;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .contact-quick {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .phone-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .phone-btn:hover {
+            background: #f97316;
+            transform: translateY(-2px);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 50%, #1e3a8a 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: slideInDown 0.8s ease;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #f97316;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 14px 35px;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* ==================== FEATURES SECTION ==================== */
+        .features {
+            padding: 80px 20px;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h3 {
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .feature-card:nth-child(2) {
+            border-top-color: var(--secondary-color);
+        }
+
+        .feature-card:nth-child(3) {
+            border-top-color: var(--accent-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* ==================== CLASSES SECTION ==================== */
+        .classes {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .class-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-blue));
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+        }
+
+        .class-badge:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .class-badge span {
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        /* ==================== ACADEMICS SECTION ==================== */
+        .academics {
+            padding: 80px 20px;
+            background: var(--light-bg);
+        }
+
+        .academics-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .academics-text h4 {
+            color: var(--secondary-color);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .academics-text h3 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .syllabus-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .syllabus-box h5 {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .syllabus-box p {
+            color: var(--text-light);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .academics-image {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+        }
+
+        /* ==================== STAFF SECTION ==================== */
+        .staff {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .staff-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .staff-image {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+        }
+
+        .staff-text h4 {
+            color: var(--secondary-color);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .staff-text h3 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .staff-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .staff-item {
+            background: var(--light-bg);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+            font-size: 14px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-color) 100%);
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-title h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .contact-title p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: rgba(53, 53, 198, 0.5);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h4 { text-shadow: 2px 2px 5px red;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-card p { text-shadow: 3px 3px 4px black;
+            font-size: 14px;
+            opacity: 0.9;
+            margin: 8px 0;
+        }
+
+        .contact-card a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: white;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h5 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        .school-bgi {
+            background-image: url(school-image.png);
+            background-size: cover;
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            .academics-content, .staff-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h3 {
+                font-size: 28px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .school-name h1 {
+                font-size: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .staff-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== SCROLL ANIMATIONS ==================== */
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== UTILITY CLASSES ==================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo-icon"><img src="school logo main.png" alt="" height="63px" style="background-color: rgb(255, 255, 255);  border-radius: 22px;"></div>
+                <div class="school-name">
+                    <h1>HPS Convent School</h1>
+                    <p>Quality Education • Excellence • Values</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#classes">Classes</a></li>
+                    <li><a href="#academics">Academics</a></li>
+                    <li><a href="#staff">Staff</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="contact-quick">
+                <a href="tel:9783138686" class="phone-btn">📞 Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Welcome to HPS Convent School</h2>
+            <p>Nurturing minds and building character from Nursery to Class 10. Committed to CBSE & RBSE excellence and holistic development of every student.</p>
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView();">Get in Touch</button>
+                <button class="btn-secondary" onclick="document.getElementById('academics').scrollIntoView();">Explore Our Programs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURES SECTION ==================== -->
+    <section class="features">
+        <div class="section-title">
+            <h3>Why Choose HPS Convent School?</h3>
+            <p>A complete educational ecosystem designed for your child's growth</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h4>Quality Education</h4>
+                <p>CBSE and RBSE based curriculum with modern teaching methodologies and experienced faculty.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏃</div>
+                <h4>Sports & Recreation</h4>
+                <p>Medium playground with facilities for various indoor and outdoor sports activities.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🏫</div>
+                <h4>Expert Faculty</h4>
+                <p>30+ dedicated staff members committed to student excellence and personality development.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h4>English Medium</h4>
+                <p>English medium instruction with strong emphasis on language skills and global readiness.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h4>Holistic Development</h4>
+                <p>Balanced curriculum including academics, sports, arts, and value-based education.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h4>Career Guidance</h4>
+                <p>Comprehensive counseling and guidance for academic and career planning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CLASSES SECTION ==================== -->
+    <section class="classes" id="classes">
+        <div class="section-title">
+            <h3>Classes Offered</h3>
+            <p>From Nursery to Class 10 - Comprehensive Education Journey</p>
+        </div>
+        <div class="classes-grid">
+            <div class="class-badge">
+                <span>Nursery</span>
+                <p>Foundation</p>
+            </div>
+            <div class="class-badge">
+                <span>LKG</span>
+                <p>Lower KG</p>
+            </div>
+            <div class="class-badge">
+                <span>UKG</span>
+                <p>Upper KG</p>
+            </div>
+            <div class="class-badge">
+                <span>1</span>
+                <p>Primary</p>
+            </div>
+            <div class="class-badge">
+                <span>2</span>
+                <p>Primary</p>
+            </div>
+            <div class="class-badge">
+                <span>3</span>
+                <p>Middle</p>
+            </div>
+            <div class="class-badge">
+                <span>4</span>
+                <p>Middle</p>
+            </div>
+            <div class="class-badge">
+                <span>5</span>
+                <p>Middle</p>
+            </div>
+            <div class="class-badge">
+                <span>6</span>
+                <p>Secondary</p>
+            </div>
+            <div class="class-badge">
+                <span>7</span>
+                <p>Secondary</p>
+            </div>
+            <div class="class-badge">
+                <span>8</span>
+                <p>Secondary</p>
+            </div>
+            <div class="class-badge">
+                <span>9</span>
+                <p>Secondary</p>
+            </div>
+            <div class="class-badge">
+                <span>10</span>
+                <p>Higher Sec</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ACADEMICS SECTION ==================== -->
+    <section class="academics" id="academics">
+        <div class="container">
+            <div class="academics-content">
+                <div class="academics-text">
+                    <h4>Our Curriculum</h4>
+                    <h3>Dual Board Excellence</h3>
+                    <p>We offer both CBSE and RBSE curricula, ensuring flexibility and comprehensive learning opportunities for our students.</p>
+                    
+                    <div class="syllabus-box">
+                        <h5>📘 CBSE Curriculum</h5>
+                        <p>Central Board of Secondary Education - Modern pedagogical approach with focus on conceptual understanding and skill development.</p>
+                    </div>
+                    
+                    <div class="syllabus-box">
+                        <h5>📗 RBSE Curriculum</h5>
+                        <p>Rajasthan Board of Secondary Education - Strong foundation in core subjects with emphasis on regional relevance.</p>
+                    </div>
+
+                    <div class="syllabus-box">
+                        <h5>🌐 English Medium Instruction</h5>
+                        <p>Fluent English communication with strong emphasis on language proficiency and global competence.</p>
+                    </div>
+                </div>
+                <div class="academics-image">
+                    <img src="staff.png" alt="staff image with students" height="250px">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STAFF SECTION ==================== -->
+    <section class="staff" id="staff">
+        <div class="container">
+            <div class="staff-content">
+                <div class="staff-image">
+                    <img src="My logo.png" alt="" height="250px">
+                </div>
+                <div class="staff-text">
+                    <h4>Our Team</h4>
+                    <h3>Experienced Faculty</h3>
+                    <p>With more than 30 dedicated staff members, we ensure personalized attention and quality education for every student. Our faculty includes qualified teachers across all subjects and support staff.</p>
+                    
+                    <div class="staff-list">
+                        <div class="staff-item">✓ Qualified Teachers</div>
+                        <div class="staff-item">✓ Subject Experts</div>
+                        <div class="staff-item">✓ Support Staff</div>
+                        <div class="staff-item">✓ Administrative Team</div>
+                        <div class="staff-item">✓ Counselors</div>
+                        <div class="staff-item">✓ Sports Coordinators</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="contact school-bgi" id="contact">
+        <div class="contact-container">
+            <div class="contact-title">
+                <h3>Get In Touch</h3>
+                <p>Have questions? We're here to help and answer any question you might have.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h4>Phone</h4>
+                    <p>Call us anytime</p>
+                    <a href="tel:9783138686">9783138686</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h4>Email</h4>
+                    <p>Write to us</p>
+                    <a href="mailto:hpsconventschool@gmail.com">hpsconventschool@gmail.com</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon"><img src="R.K.-logo.png" alt="" height="150px"></div>
+                    <h4>Director</h4>
+                    <p>RK Danga</p>
+                    <p>School Leadership</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon"><img src="My logo.png" alt="" height="150px"></div>
+                    <h4>Web Developer</h4>
+                    <p>Technical Support</p>
+                    <p>Shekhar</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon ">🏫</div>
+                    <h4>Institution</h4>
+                    <p>HPS Convent School</p>
+                    <p>Classes: Nursery - 10</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🗣️</div>
+                    <h4>Medium</h4>
+                    <p>English Medium School</p>
+                    <p>CBSE & RBSE Based</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>About Us</h5>
+                <p>HPS Convent School is dedicated to providing quality education from Nursery to Class 10, fostering excellence and values in every student.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h5>Quick Links</h5>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#classes">Classes</a></p>
+                <p><a href="#academics">Academics</a></p>
+                <p><a href="#contact">Contact</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h5>Contact Info</h5>
+                <p>📞 <a href="tel:9783138686">9783138686</a></p>
+                <p>✉️ <a href="mailto:hpsconventschool@gmail.com">hpsconventschool@gmail.com</a></p>
+                <p>🏫 HPS Convent School<br>Behin 220 kv GSS mundwa choraha , Nagaur</p>
+            </div>
+            
+            <div class="footer-section">
+                <h5>Director</h5>
+                <p><strong>RK Danga</strong></p>
+                <p>Leading educational excellence and student development</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 HPS Convent School. All rights reserved. | Website Developed by <strong>Shekhar Choudhary</strong></p>
+            <p>Designed with ❤️ for quality education</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards and section titles
+        document.querySelectorAll('.feature-card, .class-badge, .syllabus-box, .staff-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation link
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.style.opacity = '0.6';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.opacity = '1';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
